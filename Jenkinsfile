@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                sh "mkdir nextjs"
                 sh "cd nextjs"
                 sh "git clone https://github.com/sanyam40/CICD-NextJs"
             }
