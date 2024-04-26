@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Install NodeJS') {
-            steps {
-                sh 'sudo apt-get install -y nodejs'
-                sh 'sudo apt-get install -y npm'
-                sh 'npm install'
-            }
-        }
         stage('git clone') {
             steps {
                 sh "mkdir nextjs"
