@@ -3,10 +3,12 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                sh "cd nextjs"
-                sh "git clone https://github.com/sanyam40/CICD-NextJs"
+                dir('nextjs') {
+                    sh 'git clone https://github.com/sanyam40/CICD-NextJs'
+                }
             }
         }
+
         stage('Build Docker Image') {
             steps {
                 sh "docker build -t cicd-nextjs ."
